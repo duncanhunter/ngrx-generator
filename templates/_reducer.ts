@@ -2,15 +2,13 @@ import * as {{ camelCase name }} from '{{position "actions"}}/{{ lowerCase name 
 
 export interface State {
   loading: boolean;
-  entities: { [id: string]: any };
-  result: string[];
-}
+  result: any[];
+};
 
 export const initialState: State = {
   loading: false,
-  entities: {},
   result: []
-}
+};
 
 export function reducer(state = initialState, action: {{ camelCase name }}.Actions): State {
   switch (action.type) {
@@ -18,19 +16,18 @@ export function reducer(state = initialState, action: {{ camelCase name }}.Actio
       return {
         ...state,
         loading: true
-      }
+      };
     }
 
     case {{ camelCase name }}.LOAD_SUCCESS: {
-
       return {
         ...state,
+        result: action.payload,
         loading: false,
       };
     }
 
      case {{ camelCase name }}.LOAD_FAIL: {
-
       return {
         ...state,
         loading: false,
@@ -42,3 +39,4 @@ export function reducer(state = initialState, action: {{ camelCase name }}.Actio
     }
   }
 }
+
