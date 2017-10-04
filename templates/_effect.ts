@@ -11,11 +11,11 @@ import 'rxjs/add/operator/catch';
 export class {{ properCase name }}Effects {
 
   @Effect() get$ = this.actions$
-     .ofType({{ camelCase name }}Actions.LOAD)
+     .ofType({{ camelCase name }}Actions.LOAD_{{upperCase name }})
      .map(toPayload)
      .switchMap(payload => this.{{ camelCase name }}Service.get()
-      .map(data => ({ type: {{ camelCase name }}Actions.LOAD_SUCCESS, payload: data}))
-      .catch(() => Observable.of({ type: {{ camelCase name }}Actions.LOAD_FAIL}))
+      .map(data => ({ type: {{ camelCase name }}Actions.LOAD_{{upperCase name }}_SUCCESS, payload: data}))
+      .catch(() => Observable.of({ type: {{ camelCase name }}Actions.LOAD_{{upperCase name }}_FAIL}))
      );
 
   constructor(

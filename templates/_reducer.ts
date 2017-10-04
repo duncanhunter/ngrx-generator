@@ -12,14 +12,14 @@ export const initialState: State = {
 
 export function reducer(state = initialState, action: {{ camelCase name }}.Actions): State {
   switch (action.type) {
-    case {{ camelCase name }}.LOAD: {
+    case {{ camelCase name }}.LOAD_{{upperCase name }}: {
       return {
         ...state,
         loading: true
       };
     }
 
-    case {{ camelCase name }}.LOAD_SUCCESS: {
+    case {{ camelCase name }}.LOAD_{{upperCase name }}_SUCCESS: {
       return {
         ...state,
         result: action.payload,
@@ -27,7 +27,7 @@ export function reducer(state = initialState, action: {{ camelCase name }}.Actio
       };
     }
 
-     case {{ camelCase name }}.LOAD_FAIL: {
+     case {{ camelCase name }}.LOAD_{{upperCase name }}_FAIL: {
       return {
         ...state,
         loading: false,

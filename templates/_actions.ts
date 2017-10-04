@@ -1,20 +1,20 @@
 import { Action } from '@ngrx/store';
 
-export const LOAD_{{properCase name }} =                 '[{{ titleCase name }}] Load';
-export const LOAD_{{properCase name }}_SUCCESS =         '[{{ titleCase name }}] Load Success';
-export const LOAD_{{properCase name }}_FAIL =            '[{{ titleCase name }}] Load Fail';
+export const LOAD_{{upperCase name }} =                 '[{{ titleCase name }}] Load';
+export const LOAD_{{upperCase name }}_SUCCESS =         '[{{ titleCase name }}] Load Success';
+export const LOAD_{{upperCase name }}_FAIL =            '[{{ titleCase name }}] Load Fail';
 
 export class Load{{titleCase name }}Action implements Action {
-  readonly type = LOAD_{{properCase name }};
+  readonly type = LOAD_{{upperCase name }};
 }
 
 export class Load{{titleCase name }}SuccessAction implements Action {
-  readonly type = LOAD_{{properCase name }}_SUCCESS;
+  readonly type = LOAD_{{upperCase name }}_SUCCESS;
   constructor(public payload: any) { }
 }
 
 export class Load{{titleCase name }}FailAction implements Action {
-  readonly type = LOAD_{{properCase name }}_FAIL;
+  readonly type = LOAD_{{upperCase name }}_FAIL;
   constructor(public payload: any) { }
 }
 
