@@ -1,22 +1,21 @@
 import { Injectable } from '@angular/core';
-import { Actions, Effect } from '@ngrx/effects';
+import { Actions, Effect, toPayload } from '@ngrx/effects';
 import { Observable } from 'rxjs/Observable';
 import { {{properCase name }}Service } from '{{position "services"}}/{{ lowerCase name }}.service';
 import * as {{ camelCase name }}Actions from '{{position "actions"}}/{{ lowerCase name }}.actions';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
+import { switchMap, catch, map } from 'rxjs/operators';
+import { of } from 'rxjs/Observable/of';
 
 @Injectable()
 export class {{ properCase name }}Effects {
 
   @Effect() get$ = this.actions$
-     .ofType({{ camelCase name }}Actions.LOAD_{{upperCase name }})
-     .map(toPayload)
-     .switchMap(payload => this.{{ camelCase name }}Service.get()
-      .map(data => ({ type: {{ camelCase name }}Actions.LOAD_{{upperCase name }}_SUCCESS, payload: data}))
-      .catch(() => Observable.of({ type: {{ camelCase name }}Actions.LOAD_{{upperCase name }}_FAIL}))
-     );
+     .pipe(
+        ofType({{ camelCase name }}Actions.LOAD_{{upperCase name }}),
+        switchMap(payload => this.{{ camelCase name }}Service.get(),
+        map(data => ({ type: {{ camelCase name }}Actions.LOAD_{{upperCase name }}_SUCCESS, payload: data})),
+        catch(() => of({ type: {{ camelCase name }}Actions.LOAD_{{upperCase name }}_FAIL}))
+     ));
 
   constructor(
     private {{ camelCase name }}Service: {{ properCase name }}Service,

@@ -84,31 +84,11 @@ function effectGenerator(plop) {
   );
 }
 
-const service = [
-  {
-    type: 'add',
-    path: '{{ pkg "ngrxGen.services" "services" }}/{{dashCase name}}.service.ts',
-    templateFile: './templates/_service.ts'
-  }, {
-    type: 'add',
-    path: '{{ pkg "plop.services" "services" }}/{{dashCase name}}.service.spec.ts',
-    templateFile: './templates/_service.spec.ts'
-  }
-];
-
-function serviceGenerator(plop) {
-  plop.setGenerator('Service', 
-    Object.assign({}, defaults('Service'), {
-      actions: service
-    })
-  );
-}
-
 function wholeGenerator(plop) {
     plop.setGenerator('The whole shebang', 
       Object.assign({}, defaults('Whole'), {
-        description: 'Actions, Reducer, Service and Effect',
-        actions: [].concat(actions, reducer, effect, service)
+        description: 'Actions, Reducer and Effect',
+        actions: [].concat(actions, reducer, effect)
       })
   );
 }
@@ -144,7 +124,6 @@ module.exports = function (plop) {
   actionGenerator(plop);
   reducerGenerator(plop);
   effectGenerator(plop);
-  serviceGenerator(plop);
 
 
 };
