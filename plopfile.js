@@ -49,11 +49,6 @@ const reducer = [
     type: 'add',
     path: '{{ pkg "ngrxGen.reducers" "reducers" }}/{{dashCase name}}.reducer.ts',
     templateFile: './templates/_reducer.ts'
-  }, 
-  {
-    type: 'add',
-    path: '{{ pkg "ngrxGen.reducers" "reducers"}}/{{dashCase name}}.reducer.spec.ts',
-    templateFile: './templates/_reducer.spec.ts'
   }
 ]
 function reducerGenerator(plop) {
@@ -69,10 +64,6 @@ const effect = [
     type: 'add',
     path: '{{ pkg "ngrxGen.effects" "effects" }}/{{dashCase name}}.effects.ts',
     templateFile: './templates/_effect.ts'
-  }, {
-    type: 'add',
-    path: '{{ pkg "plop.effects" "effects" }}/{{dashCase name}}.effects.spec.ts',
-    templateFile: './templates/_effects.spec.ts'
   }
 ];
 
@@ -124,6 +115,4 @@ module.exports = function (plop) {
   actionGenerator(plop);
   reducerGenerator(plop);
   effectGenerator(plop);
-
-
 };

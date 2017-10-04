@@ -11,10 +11,10 @@ export class {{ properCase name }}Effects {
 
   @Effect() get$ = this.actions$
      .pipe(
-        ofType({{ camelCase name }}Actions.LOAD_{{upperCase name }}),
-        switchMap(payload => this.{{ camelCase name }}Service.get(),
-        map(data => ({ type: {{ camelCase name }}Actions.LOAD_{{upperCase name }}_SUCCESS, payload: data})),
-        catch(() => of({ type: {{ camelCase name }}Actions.LOAD_{{upperCase name }}_FAIL}))
+        ofType({{ camelCase name }}Actions.LOAD_{{upperCase name}}),
+        switchMap(payload => this.{{camelCase name}}Service.get(),
+        map(data => ({ type: {{camelCase name}}Actions.LOAD_{{upperCase name }}_SUCCESS, payload: data})),
+        catch(() => of({ type: {{camelCase name}}Actions.LOAD_{{upperCase name }}_FAIL}))
      ));
 
   constructor(

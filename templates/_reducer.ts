@@ -1,4 +1,4 @@
-import * as {{ camelCase name }} from '{{position "actions"}}/{{ lowerCase name }}.actions';
+import * as {{ camelCase name }} from '{{position "actions"}}/{{ dashCase name }}.actions';
 
 export interface State {
   loading: boolean;
