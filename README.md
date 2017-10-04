@@ -20,10 +20,8 @@ By default, it will create the templates in the current directory.
 If you prefer the ngrx/example style -
 ```shell
 - reducers
-- services
 - actions
 - effects
-- services
 ```
 
 you can add the following line to your `package.json`
