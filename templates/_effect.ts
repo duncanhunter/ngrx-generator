@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, toPayload } from '@ngrx/effects';
 import { Observable } from 'rxjs/Observable';
-import { {{properCase name }}Service } from '{{position "services"}}/{{ lowerCase name }}.service';
 import * as {{ camelCase name }}Actions from '{{position "actions"}}/{{ lowerCase name }}.actions';
 import { switchMap, catch, map } from 'rxjs/operators';
 import { of } from 'rxjs/Observable/of';
+import { {{ titleCase name}}Service } from './../swagger-client';
+import { ErrorHandlerService } from '../../services/error-handler.service';
 
 @Injectable()
 export class {{ properCase name }}Effects {

@@ -50,7 +50,8 @@ const reducer = [
     path: '{{ pkg "ngrxGen.reducers" "reducers" }}/{{dashCase name}}.reducer.ts',
     templateFile: './templates/_reducer.ts'
   }
-]
+];
+
 function reducerGenerator(plop) {
    plop.setGenerator('Reducer', 
     Object.assign({}, defaults('Reducer'), {
