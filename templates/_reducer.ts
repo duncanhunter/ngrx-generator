@@ -1,6 +1,6 @@
 import * as {{ camelCase name }} from '{{position "actions"}}/{{ dashCase name }}.actions';
 
-export interface State {
+export interface {{properCase name}}State {
   loading: boolean;
   result: any[];
 };
