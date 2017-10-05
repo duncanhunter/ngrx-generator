@@ -14,6 +14,7 @@ export class {{ properCase name }}Effects {
   constructor(
     private {{ camelCase name }}Service: {{properCase name}}Service,
     private actions$: Actions
+  ) { }
   
   @Effect() get$ = this.actions$
      .ofType({{ camelCase name }}Actions.LOAD_{{upperCase name}})
@@ -23,6 +24,5 @@ export class {{ properCase name }}Effects {
         catchError(() => Observable.of({ type: {{camelCase name}}Actions.LOAD_{{upperCase name }}_FAIL}))
      ));
 
-  ) { }
 
 }
