@@ -3,7 +3,7 @@ import * as {{ camelCase name }} from '{{position "actions"}}/{{ dashCase name }
 export interface {{properCase name}}State {
   loading: boolean;
   result: any[];
-};
+}
 
 export const initialState: {{properCase name}}State = {
   loading: false,
