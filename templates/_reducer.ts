@@ -5,38 +5,30 @@ export interface State {
   result: any[];
 };
 
-export const initialState: State = {
+export const initialState: {{properCase name}}State = {
   loading: false,
   result: []
-};
+}
 
-export function reducer(state = initialState, action: {{ camelCase name }}.Actions): State {
+export function {{ camelCase name }}Command(state:  {{properCase name}}State):  {{properCase name}}State {
+  return {
+    ...state,
+    loading: true
+  };
+}
+
+export function {{ camelCase name }}SuccessCommand(state:  {{properCase name}}State, payload: UserDto):  {{properCase name}}State {
+  return {
+    user: payload,
+    loading: false
+  };
+}
+
+export function reducer(state = initialState, action: {{ camelCase name }}.Actions): {{properCase name}}State {
   switch (action.type) {
-    case {{ camelCase name }}.LOAD_{{upperCase name }}: {
-      return {
-        ...state,
-        loading: true
-      };
-    }
-
-    case {{ camelCase name }}.LOAD_{{upperCase name }}_SUCCESS: {
-      return {
-        ...state,
-        result: action.payload,
-        loading: false,
-      };
-    }
-
-     case {{ camelCase name }}.LOAD_{{upperCase name }}_FAIL: {
-      return {
-        ...state,
-        loading: false,
-      };
-    }
-
-    default: {
-      return state;
-    }
+    case {{ camelCase name }}.LOAD_{{upperCase name }}: return {{ camelCase name }}Command(state);
+    case {{ camelCase name }}.LOAD_{{upperCase name }}_SUCCESS: return {{ camelCase name }}SuccessCommand(state, action.payload);
+    default: return state;
   }
 }
 
