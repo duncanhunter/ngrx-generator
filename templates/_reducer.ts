@@ -8,16 +8,16 @@ export interface {{properCase name}}State {
 export const initialState: {{properCase name}}State = {
   loading: false,
   result: []
-}
+};
 
-export function {{ camelCase name }}Command(state:  {{properCase name}}State):  {{properCase name}}State {
+export function {{ camelCase name }}Command(state: {{properCase name}}State): {{properCase name}}State {
   return {
     ...state,
     loading: true
   };
 }
 
-export function {{ camelCase name }}SuccessCommand(state:  {{properCase name}}State, payload: any):  {{properCase name}}State {
+export function {{ camelCase name }}SuccessCommand(state: {{properCase name}}State, payload: any): {{properCase name}}State {
   return  {
       ...payload,
       loading: false

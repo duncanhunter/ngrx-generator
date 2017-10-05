@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import * as {{camelCase name}}Actions from '{{position "actions"}}/{{dashCase name}}.actions';
 import { switchMap, catchError, map } from 'rxjs/operators';
 import { of } from 'rxjs/Observable/of';
-import { {{properCase name}}Service } from './../swagger-client';
+import { {{properCase name}}Service } from './../../swagger-client';
 import { ErrorHandlerService } from '../../services/error-handler.service';
 import 'rxjs/add/observable/of';
 
