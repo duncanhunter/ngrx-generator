@@ -17,7 +17,7 @@ export function {{ camelCase name }}Command(state:  {{properCase name}}State):  
   };
 }
 
-export function {{ camelCase name }}SuccessCommand(state:  {{properCase name}}State, payload: UserDto):  {{properCase name}}State {
+export function {{ camelCase name }}SuccessCommand(state:  {{properCase name}}State, payload: any):  {{properCase name}}State {
   return {
     user: payload,
     loading: false
