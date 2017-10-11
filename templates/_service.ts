@@ -7,7 +7,7 @@ export class {{ properCase name }}Service {
 
   constructor(private afs: AngularFirestore) { }
 
-  get(): AngularFirestoreCollection<any> {
+  get(): Observable<any> {
    return this.afs.collection<any>('{{camelCase name}}').valueChanges();
   }
 

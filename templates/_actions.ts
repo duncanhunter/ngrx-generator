@@ -1,8 +1,8 @@
 import { Action } from '@ngrx/store';
 
-export const LOAD_{{upperCase name }} = '[{{ titleCase name }}] Load';
-export const LOAD_{{upperCase name }}_SUCCESS = '[{{ titleCase name }}] Load Success';
-export const LOAD_{{upperCase name }}_FAIL = '[{{ titleCase name }}] Load Fail';
+export const LOAD_{{upperCase name }} = '[{{ titleCase name }}] LOAD_{{upperCase name }}';
+export const LOAD_{{upperCase name }}_SUCCESS = '[{{ titleCase name }}] LOAD_{{upperCase name }}_SUCCESS';
+export const LOAD_{{upperCase name }}_FAIL = '[{{ titleCase name }}] LOAD_{{upperCase name }}_FAIL';
 
 export class Load{{titleCase name }}Action implements Action {
   readonly type = LOAD_{{upperCase name }};
